@@ -21,6 +21,8 @@
 | Работа | Что сделано |
 |---|---|
 | [`labs/01-process-inside`](labs/01-process-inside/README.md) | своя программа в мониторе процессов: номер, память, дескрипторы, библиотеки |
+| [`labs/04-process-tree`](labs/04-process-tree/README.md) | древо процессов: родители, дети, сироты |
+| [`labs/08-memory-map`](labs/08-memory-map/README.md) | обещанная и занятая память: принцип работы, утечки |
 
 ## Структура
 
