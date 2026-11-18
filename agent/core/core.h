@@ -10,6 +10,7 @@
 #endif
 
 #define CORE_HOST_MAX 256
+#define CORE_NAME_MAX 64
 
 
 struct core_info {
@@ -20,6 +21,13 @@ struct core_info {
     int64_t uptime_s;
 };
 
+struct core_proc {
+    int64_t pid;
+    int64_t ppid;
+    char    name[CORE_NAME_MAX];
+};
+
 CORE_API int core_get_info(struct core_info *out);
+CORE_API int core_list_procs(struct core_proc *out, int32_t max, int32_t *count);
 
 #endif
