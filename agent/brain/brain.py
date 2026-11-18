@@ -15,6 +15,7 @@ class CoreInfo(ctypes.Structure):
         ("cpus", ctypes.c_int32),
         ("page_size", ctypes.c_int32),
         ("host", ctypes.c_char * 256),
+        ("uptime_s", ctypes.c_int64),
     ]
 
 
@@ -39,6 +40,7 @@ def get_info():
         "cpus": info.cpus,
         "page_size": info.page_size,
         "host": info.host.decode("utf-8"),
+        "uptime_s": info.uptime_s,
     }
 
 
@@ -51,6 +53,7 @@ def send(message, url):
 
 
 if __name__ == "__main__":
+    print(f"Размер структуры CoreInfo: {ctypes.sizeof(CoreInfo)} байт")
     message = {"event": "agent_started", "os": sys.platform, **get_info()}
     print(json.dumps(message, ensure_ascii=False, indent=2))
     if len(sys.argv) > 1:
