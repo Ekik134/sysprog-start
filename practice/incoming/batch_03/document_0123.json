@@ -1,0 +1,8 @@
+{
+  "document_id": "DOC-00123",
+  "order_id": "ORD-1123",
+  "document_type": "shipment",
+  "date": "2026-10-28",
+  "customer": "Точка выдачи №3",
+  "amount": 804.6
+}
